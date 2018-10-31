@@ -1,0 +1,85 @@
+irun: 14.10-p001: (c) Copyright 1995-2014 Cadence Design Systems, Inc.
+TOOL:	irun	14.10-p001: Started on Oct 31, 2018 at 15:09:46 PDT
+irun
+	-sv
+	csa_64bit.v
+	test.sv
+file: csa_64bit.v
+	module worklib.half_adder:v
+		errors: 0, warnings: 0
+	module worklib.full_adder:v
+		errors: 0, warnings: 0
+	module worklib.ripple_adder_no_cin:v
+		errors: 0, warnings: 0
+	module worklib.ripple_adder_cin:v
+		errors: 0, warnings: 0
+	module worklib.csa_8bit:v
+		errors: 0, warnings: 0
+	module worklib.mux_8:v
+		errors: 0, warnings: 0
+	module worklib.mux_16_tier1:v
+		errors: 0, warnings: 0
+	module worklib.mux_16_tier2:v
+		errors: 0, warnings: 0
+	module worklib.mux_32_tier2:v
+		errors: 0, warnings: 0
+	module worklib.mux_32_tier3:v
+		errors: 0, warnings: 0
+	module worklib.csa_64bit:v
+		errors: 0, warnings: 0
+file: test.sv
+	module worklib.testbench:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		testbench
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.csa_64bit:v <0x3dcd68a7>
+			streams:  20, words:  5484
+		worklib.csa_8bit:v <0x1a77bf74>
+			streams:   0, words:     0
+		worklib.full_adder:v <0x1a0045b4>
+			streams:   0, words:     0
+		worklib.half_adder:v <0x09d69e8b>
+			streams:   0, words:     0
+		worklib.mux_16_tier1:v <0x064647cf>
+			streams:   2, words:   964
+		worklib.mux_16_tier2:v <0x01c40090>
+			streams:   1, words:   269
+		worklib.mux_32_tier2:v <0x0fed4f6e>
+			streams:   2, words:   516
+		worklib.mux_32_tier3:v <0x48bfd4ec>
+			streams:   1, words:   243
+		worklib.mux_8:v <0x5d846a32>
+			streams:   1, words:   387
+		worklib.testbench:sv <0x4e92595f>
+			streams:   5, words: 13172
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		               Instances  Unique
+		Modules:             151      12
+		Registers:             9       9
+		Scalar wires:        266       -
+		Expanded wires:      184      19
+		Vectored wires:       10       -
+		Always blocks:         2       2
+		Initial blocks:        3       3
+		Cont. assignments:    11      19
+		Pseudo assignments:   18      18
+	Writing initial simulation snapshot: worklib.testbench:sv
+Loading snapshot worklib.testbench:sv .................... Done
+ncsim> source /apps/cadence/INCISIV141/tools/inca/files/ncsimrc
+ncsim> run
+A : 0000000000000000, B : 0000000000000000, sum : 0000000000000000, cout : 0 , overflow : 0 
+A : ffffffffffffffff, B : 0000000000000001, sum : 0000000000000000, cout : 1 , overflow : 0 
+A : ffffffffffffffff, B : 0000000000000001, sum : 0000000000000000, cout : 0 , overflow : 0 
+A : ffffffffffffffff, B : 0000000000000001, sum : fffffffffffffffe, cout : 1 , overflow : 1 
+A : 0000aaaabbbbffff, B : 0000100012341001, sum : fffffffffffffffe, cout : 1 , overflow : 1 
+A :  1229801703532086340, B :                    1, sum :  1229801703532086339, cout : 1 , overflow : 0 
+Simulation complete via $finish(1) at time 315 NS + 0
+./test.sv:59      $finish ();
+ncsim> exit
+TOOL:	irun	14.10-p001: Exiting on Oct 31, 2018 at 15:09:47 PDT  (total: 00:00:01)

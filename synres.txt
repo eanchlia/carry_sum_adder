@@ -1,0 +1,1105 @@
+                                        
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+                                        
+              Version K-2015.06-SP5-1 for linux64 - Feb 26, 2016 
+                                        
+                    Copyright (c) 1988 - 2016 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+set search_path {/export/apps/toshiba/sjsu/synopsys/tc240c/}
+/export/apps/toshiba/sjsu/synopsys/tc240c/
+set link_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25}
+/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25
+set target_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25}
+/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25
+set symbol_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.workview.sdb}
+/apps/toshiba/sjsu/synopsys/tc240c/tc240c.workview.sdb
+set synthetic_library {dw_foundation.sldb standard.sldb}
+dw_foundation.sldb standard.sldb
+set_min_library /apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25 -min_version /apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_BCCOM25
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25'
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_BCCOM25'
+1
+read_verilog ./csa_64bit.v
+Loading db file '/apps/synopsys/SYNTH/libraries/syn/gtech.db'
+Loading db file '/apps/synopsys/SYNTH/libraries/syn/standard.sldb'
+  Loading link library 'tc240c'
+  Loading link library 'gtech'
+Loading verilog file '/home/012461540@SJSUAD.SJSU.EDU/Study/git/csa_64bit.v'
+Detecting input file type automatically (-rtl or -netlist).
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Loading db file '/apps/synopsys/SYNTH/libraries/syn/dw_foundation.sldb'
+Warning: The following synthetic libraries should be added to 
+	the list of link libraries: 
+	'dw_foundation.sldb'. (UISN-26)
+Compiling source file /home/012461540@SJSUAD.SJSU.EDU/Study/git/csa_64bit.v
+Warning:  /home/012461540@SJSUAD.SJSU.EDU/Study/git/csa_64bit.v:155: The statements in initial blocks are ignored. (VER-281)
+
+Inferred memory devices in process
+	in routine csa_64bit line 155 in file
+		'/home/012461540@SJSUAD.SJSU.EDU/Study/git/csa_64bit.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|       op2_reg       | Latch |  64   |  Y  | N  | N  | N  | -  | -  | -  |
+|       op1_reg       | Latch |  64   |  Y  | N  | N  | N  | -  | -  | -  |
+|   cin_addsum_reg    | Latch |   1   |  N  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+Presto compilation completed successfully.
+Current design is now '/home/012461540@SJSUAD.SJSU.EDU/Study/git/half_adder.db:half_adder'
+Loaded 11 designs.
+Current design is 'half_adder'.
+half_adder full_adder ripple_adder_no_cin ripple_adder_cin csa_8bit mux_8 mux_16_tier1 mux_16_tier2 mux_32_tier2 mux_32_tier3 csa_64bit
+analyze  -format verilog {./csa_64bit.v}
+Running PRESTO HDLC
+Compiling source file ./csa_64bit.v
+Warning:  ./csa_64bit.v:155: The statements in initial blocks are ignored. (VER-281)
+Presto compilation completed successfully.
+1
+elaborate  csa_64bit
+Running PRESTO HDLC
+
+Inferred memory devices in process
+	in routine csa_64bit line 155 in file
+		'./csa_64bit.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|       op2_reg       | Latch |  64   |  Y  | N  | N  | N  | -  | -  | -  |
+|       op1_reg       | Latch |  64   |  Y  | N  | N  | N  | -  | -  | -  |
+|   cin_addsum_reg    | Latch |   1   |  N  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+Presto compilation completed successfully.
+Warning: Overwriting design file '/home/012461540@SJSUAD.SJSU.EDU/Study/git/csa_64bit.db'. (DDB-24)
+Elaborated 1 design.
+Current design is now 'csa_64bit'.
+1
+current_design csa_64bit
+Current design is 'csa_64bit'.
+{csa_64bit}
+check_design 
+ 
+****************************************
+check_design summary:
+Version:     K-2015.06-SP5-1
+Date:        Wed Oct 31 15:05:52 2018
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                     50
+    Unconnected ports (LINT-28)                                     1
+    Feedthrough (LINT-29)                                          48
+    Shorted outputs (LINT-31)                                       1
+
+Cells                                                               1
+    Connected to power or ground (LINT-32)                          1
+--------------------------------------------------------------------------------
+
+Warning: In design 'csa_64bit', port 'clock' is not connected to any nets. (LINT-28)
+Warning: In design 'mux_16_tier1', input port 'a_s_0[7]' is connected directly to output port 'o_s_0[7]'. (LINT-29)
+Warning: In design 'mux_16_tier1', input port 'a_s_0[6]' is connected directly to output port 'o_s_0[6]'. (LINT-29)
+Warning: In design 'mux_16_tier1', input port 'a_s_0[5]' is connected directly to output port 'o_s_0[5]'. (LINT-29)
+Warning: In design 'mux_16_tier1', input port 'a_s_0[4]' is connected directly to output port 'o_s_0[4]'. (LINT-29)
+Warning: In design 'mux_16_tier1', input port 'a_s_0[3]' is connected directly to output port 'o_s_0[3]'. (LINT-29)
+Warning: In design 'mux_16_tier1', input port 'a_s_0[2]' is connected directly to output port 'o_s_0[2]'. (LINT-29)
+Warning: In design 'mux_16_tier1', input port 'a_s_0[1]' is connected directly to output port 'o_s_0[1]'. (LINT-29)
+Warning: In design 'mux_16_tier1', input port 'a_s_0[0]' is connected directly to output port 'o_s_0[0]'. (LINT-29)
+Warning: In design 'mux_16_tier1', input port 'a_s_1[7]' is connected directly to output port 'o_s_1[7]'. (LINT-29)
+Warning: In design 'mux_16_tier1', input port 'a_s_1[6]' is connected directly to output port 'o_s_1[6]'. (LINT-29)
+Warning: In design 'mux_16_tier1', input port 'a_s_1[5]' is connected directly to output port 'o_s_1[5]'. (LINT-29)
+Warning: In design 'mux_16_tier1', input port 'a_s_1[4]' is connected directly to output port 'o_s_1[4]'. (LINT-29)
+Warning: In design 'mux_16_tier1', input port 'a_s_1[3]' is connected directly to output port 'o_s_1[3]'. (LINT-29)
+Warning: In design 'mux_16_tier1', input port 'a_s_1[2]' is connected directly to output port 'o_s_1[2]'. (LINT-29)
+Warning: In design 'mux_16_tier1', input port 'a_s_1[1]' is connected directly to output port 'o_s_1[1]'. (LINT-29)
+Warning: In design 'mux_16_tier1', input port 'a_s_1[0]' is connected directly to output port 'o_s_1[0]'. (LINT-29)
+Warning: In design 'mux_32_tier2', input port 'a_s_0[15]' is connected directly to output port 'o_s_0[15]'. (LINT-29)
+Warning: In design 'mux_32_tier2', input port 'a_s_0[14]' is connected directly to output port 'o_s_0[14]'. (LINT-29)
+Warning: In design 'mux_32_tier2', input port 'a_s_0[13]' is connected directly to output port 'o_s_0[13]'. (LINT-29)
+Warning: In design 'mux_32_tier2', input port 'a_s_0[12]' is connected directly to output port 'o_s_0[12]'. (LINT-29)
+Warning: In design 'mux_32_tier2', input port 'a_s_0[11]' is connected directly to output port 'o_s_0[11]'. (LINT-29)
+Warning: In design 'mux_32_tier2', input port 'a_s_0[10]' is connected directly to output port 'o_s_0[10]'. (LINT-29)
+Warning: In design 'mux_32_tier2', input port 'a_s_0[9]' is connected directly to output port 'o_s_0[9]'. (LINT-29)
+Warning: In design 'mux_32_tier2', input port 'a_s_0[8]' is connected directly to output port 'o_s_0[8]'. (LINT-29)
+Warning: In design 'mux_32_tier2', input port 'a_s_0[7]' is connected directly to output port 'o_s_0[7]'. (LINT-29)
+Warning: In design 'mux_32_tier2', input port 'a_s_0[6]' is connected directly to output port 'o_s_0[6]'. (LINT-29)
+Warning: In design 'mux_32_tier2', input port 'a_s_0[5]' is connected directly to output port 'o_s_0[5]'. (LINT-29)
+Warning: In design 'mux_32_tier2', input port 'a_s_0[4]' is connected directly to output port 'o_s_0[4]'. (LINT-29)
+Warning: In design 'mux_32_tier2', input port 'a_s_0[3]' is connected directly to output port 'o_s_0[3]'. (LINT-29)
+Warning: In design 'mux_32_tier2', input port 'a_s_0[2]' is connected directly to output port 'o_s_0[2]'. (LINT-29)
+Warning: In design 'mux_32_tier2', input port 'a_s_0[1]' is connected directly to output port 'o_s_0[1]'. (LINT-29)
+Warning: In design 'mux_32_tier2', input port 'a_s_0[0]' is connected directly to output port 'o_s_0[0]'. (LINT-29)
+Warning: In design 'mux_32_tier2', input port 'a_s_1[15]' is connected directly to output port 'o_s_1[15]'. (LINT-29)
+Warning: In design 'mux_32_tier2', input port 'a_s_1[14]' is connected directly to output port 'o_s_1[14]'. (LINT-29)
+Warning: In design 'mux_32_tier2', input port 'a_s_1[13]' is connected directly to output port 'o_s_1[13]'. (LINT-29)
+Warning: In design 'mux_32_tier2', input port 'a_s_1[12]' is connected directly to output port 'o_s_1[12]'. (LINT-29)
+Warning: In design 'mux_32_tier2', input port 'a_s_1[11]' is connected directly to output port 'o_s_1[11]'. (LINT-29)
+Warning: In design 'mux_32_tier2', input port 'a_s_1[10]' is connected directly to output port 'o_s_1[10]'. (LINT-29)
+Warning: In design 'mux_32_tier2', input port 'a_s_1[9]' is connected directly to output port 'o_s_1[9]'. (LINT-29)
+Warning: In design 'mux_32_tier2', input port 'a_s_1[8]' is connected directly to output port 'o_s_1[8]'. (LINT-29)
+Warning: In design 'mux_32_tier2', input port 'a_s_1[7]' is connected directly to output port 'o_s_1[7]'. (LINT-29)
+Warning: In design 'mux_32_tier2', input port 'a_s_1[6]' is connected directly to output port 'o_s_1[6]'. (LINT-29)
+Warning: In design 'mux_32_tier2', input port 'a_s_1[5]' is connected directly to output port 'o_s_1[5]'. (LINT-29)
+Warning: In design 'mux_32_tier2', input port 'a_s_1[4]' is connected directly to output port 'o_s_1[4]'. (LINT-29)
+Warning: In design 'mux_32_tier2', input port 'a_s_1[3]' is connected directly to output port 'o_s_1[3]'. (LINT-29)
+Warning: In design 'mux_32_tier2', input port 'a_s_1[2]' is connected directly to output port 'o_s_1[2]'. (LINT-29)
+Warning: In design 'mux_32_tier2', input port 'a_s_1[1]' is connected directly to output port 'o_s_1[1]'. (LINT-29)
+Warning: In design 'mux_32_tier2', input port 'a_s_1[0]' is connected directly to output port 'o_s_1[0]'. (LINT-29)
+Warning: In design 'csa_64bit', output port 'overflow' is connected directly to output port 'sum_csa_64[63]'. (LINT-31)
+Warning: In design 'csa_8bit', a pin on submodule 'r2' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'cin_rca' is connected to logic 1. 
+1
+create_clock clock -name clock -period 3.64
+1
+set_clock_uncertainty 0.25 clock
+1
+set_propagated_clock clock
+Information: set_input_delay values are added to the propagated clock skew. (TIM-113)
+1
+set_dont_touch_network [all_clocks]
+1
+set_fix_hold clock
+1
+compile -incremental_mapping
+Warning: The following synthetic libraries should be added to 
+	the list of link libraries: 
+	'dw_foundation.sldb'. (UISN-26)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | K-2015.06-DWBB_201506.5.1
+                                                               |     *     |
+| Licensed DW Building Blocks        | K-2015.06-DWBB_201506.5.1
+                                                               |           |
+============================================================================
+
+
+Information: There are 51 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Warning: Operating condition WCCOM25 set on design csa_64bit has different process,
+voltage and temperatures parameters than the parameters at which target library 
+tc240c is characterized. Delays may be inaccurate as a result. (OPT-998)
+
+  Beginning Pass 1 Mapping  (Incremental)
+  ------------------------
+  Processing 'mux_32_tier3'
+  Processing 'mux_32_tier2'
+  Processing 'mux_16_tier1_0'
+  Processing 'full_adder_0'
+  Processing 'half_adder_0'
+  Processing 'mux_16_tier2'
+  Processing 'mux_8'
+  Processing 'csa_64bit'
+Information: The register 'cin_addsum_reg' is a constant and will be removed. (OPT-1206)
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Input delay ('fall') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('fall') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+
+  Beginning Mapping Optimizations  (Medium effort)  (Incremental)
+  -------------------------------
+
+  Beginning Incremental Implementation Selection
+  ----------------------------------------------
+Information: Input delay ('fall') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:02    1950.5      0.00       0.0     956.9                                0.00  
+    0:00:02    2027.5      0.00       0.0       0.0                                0.00  
+    0:00:02    2027.5      0.00       0.0       0.0                                0.00  
+    0:00:02    2027.5      0.00       0.0       0.0                                0.00  
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_BCCOM25'
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+1
+report -cell
+report_cell
+Information: Updating graph... (UID-83)
+ 
+****************************************
+Report : cell
+Design : csa_64bit
+Version: K-2015.06-SP5-1
+Date   : Wed Oct 31 15:05:55 2018
+****************************************
+
+Attributes:
+    b - black box (unknown)
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    u - contains unmapped logic
+
+Cell                      Reference       Library             Area  Attributes
+--------------------------------------------------------------------------------
+I_2                       CIVX2           tc240c          1.000000  
+I_3                       CIVX2           tc240c          1.000000  
+I_4                       CIVX2           tc240c          1.000000  
+I_5                       CIVX2           tc240c          1.000000  
+I_6                       CIVX2           tc240c          1.000000  
+I_7                       CIVX2           tc240c          1.000000  
+I_8                       CIVX2           tc240c          1.000000  
+I_9                       CIVX2           tc240c          1.000000  
+I_10                      CIVX2           tc240c          1.000000  
+I_11                      CIVX2           tc240c          1.000000  
+I_12                      CIVX2           tc240c          1.000000  
+I_13                      CIVX2           tc240c          1.000000  
+I_14                      CIVX2           tc240c          1.000000  
+I_15                      CIVX2           tc240c          1.000000  
+I_16                      CIVX2           tc240c          1.000000  
+I_17                      CIVX2           tc240c          1.000000  
+I_18                      CIVX2           tc240c          1.000000  
+I_19                      CIVX2           tc240c          1.000000  
+I_20                      CIVX2           tc240c          1.000000  
+I_21                      CIVX2           tc240c          1.000000  
+I_22                      CIVX2           tc240c          1.000000  
+I_23                      CIVX2           tc240c          1.000000  
+I_24                      CIVX2           tc240c          1.000000  
+I_25                      CIVX2           tc240c          1.000000  
+I_26                      CIVX2           tc240c          1.000000  
+I_27                      CIVX2           tc240c          1.000000  
+I_28                      CIVX2           tc240c          1.000000  
+I_29                      CIVX2           tc240c          1.000000  
+I_30                      CIVX2           tc240c          1.000000  
+I_31                      CIVX2           tc240c          1.000000  
+I_32                      CIVX2           tc240c          1.000000  
+I_33                      CIVX2           tc240c          1.000000  
+I_34                      CIVX2           tc240c          1.000000  
+I_35                      CIVX2           tc240c          1.000000  
+I_36                      CIVX2           tc240c          1.000000  
+I_37                      CIVX2           tc240c          1.000000  
+I_38                      CIVX2           tc240c          1.000000  
+I_39                      CIVX2           tc240c          1.000000  
+I_40                      CIVX2           tc240c          1.000000  
+I_41                      CIVX2           tc240c          1.000000  
+I_42                      CIVX2           tc240c          1.000000  
+I_43                      CIVX2           tc240c          1.000000  
+I_44                      CIVX2           tc240c          1.000000  
+I_45                      CIVX2           tc240c          1.000000  
+I_46                      CIVX2           tc240c          1.000000  
+I_47                      CIVX2           tc240c          1.000000  
+I_48                      CIVX2           tc240c          1.000000  
+I_49                      CIVX2           tc240c          1.000000  
+I_50                      CIVX2           tc240c          1.000000  
+I_51                      CIVX2           tc240c          1.000000  
+I_52                      CIVX2           tc240c          1.000000  
+I_53                      CIVX2           tc240c          1.000000  
+I_54                      CIVX2           tc240c          1.000000  
+I_55                      CIVX2           tc240c          1.000000  
+I_56                      CIVX2           tc240c          1.000000  
+I_57                      CIVX2           tc240c          1.000000  
+I_58                      CIVX2           tc240c          1.000000  
+I_59                      CIVX2           tc240c          1.000000  
+I_60                      CIVX2           tc240c          1.000000  
+I_61                      CIVX2           tc240c          1.000000  
+I_62                      CIVX2           tc240c          1.000000  
+I_63                      CIVX2           tc240c          1.000000  
+I_64                      CIVX2           tc240c          1.000000  
+I_65                      CIVX2           tc240c          1.000000  
+U4                        CIVX2           tc240c          1.000000  
+U5                        CIVX2           tc240c          1.000000  
+U6                        CIVX2           tc240c          1.000000  
+U7                        CIVX2           tc240c          1.000000  
+U8                        CIVX2           tc240c          1.000000  
+U9                        CIVX2           tc240c          1.000000  
+U10                       CIVX2           tc240c          1.000000  
+U11                       CIVX2           tc240c          1.000000  
+U12                       CIVX2           tc240c          1.000000  
+U13                       CIVX2           tc240c          1.000000  
+U14                       CIVX2           tc240c          1.000000  
+U15                       CIVX2           tc240c          1.000000  
+U16                       CIVX2           tc240c          1.000000  
+U17                       CIVX2           tc240c          1.000000  
+U18                       CIVX2           tc240c          1.000000  
+U19                       CIVX2           tc240c          1.000000  
+U20                       CIVX2           tc240c          1.000000  
+U21                       CIVX2           tc240c          1.000000  
+U22                       CIVX2           tc240c          1.000000  
+U23                       CIVX2           tc240c          1.000000  
+U24                       CIVX2           tc240c          1.000000  
+U25                       CIVX2           tc240c          1.000000  
+U26                       CIVX2           tc240c          1.000000  
+U27                       CIVX2           tc240c          1.000000  
+U28                       CIVX2           tc240c          1.000000  
+U29                       CIVX2           tc240c          1.000000  
+U30                       CIVX2           tc240c          1.000000  
+U31                       CIVX2           tc240c          1.000000  
+U32                       CIVX2           tc240c          1.000000  
+U33                       CIVX2           tc240c          1.000000  
+U34                       CIVX2           tc240c          1.000000  
+U35                       CIVX2           tc240c          1.000000  
+U36                       CIVX2           tc240c          1.000000  
+U37                       CIVX2           tc240c          1.000000  
+U38                       CIVX2           tc240c          1.000000  
+U39                       CIVX2           tc240c          1.000000  
+U40                       CIVX2           tc240c          1.000000  
+U41                       CIVX2           tc240c          1.000000  
+U42                       CIVX2           tc240c          1.000000  
+U43                       CIVX2           tc240c          1.000000  
+U44                       CIVX2           tc240c          1.000000  
+U45                       CIVX2           tc240c          1.000000  
+U46                       CIVX2           tc240c          1.000000  
+U47                       CIVX2           tc240c          1.000000  
+U48                       CIVX2           tc240c          1.000000  
+U49                       CIVX2           tc240c          1.000000  
+U50                       CIVX2           tc240c          1.000000  
+U51                       CIVX2           tc240c          1.000000  
+U52                       CIVX2           tc240c          1.000000  
+U53                       CIVX2           tc240c          1.000000  
+U54                       CIVX2           tc240c          1.000000  
+U55                       CIVX2           tc240c          1.000000  
+U56                       CIVX2           tc240c          1.000000  
+U57                       CIVX2           tc240c          1.000000  
+U58                       CIVX2           tc240c          1.000000  
+U59                       CIVX2           tc240c          1.000000  
+U60                       CIVX2           tc240c          1.000000  
+U61                       CIVX2           tc240c          1.000000  
+U62                       CIVX2           tc240c          1.000000  
+U63                       CIVX2           tc240c          1.000000  
+U64                       CIVX2           tc240c          1.000000  
+U65                       CIVX2           tc240c          1.000000  
+U66                       CIVX2           tc240c          1.000000  
+U67                       CIVX2           tc240c          1.000000  
+U68                       CEOX1           tc240c          2.000000  
+U69                       CEOX1           tc240c          2.000000  
+U70                       CEOX1           tc240c          2.000000  
+U71                       CEOX1           tc240c          2.000000  
+U72                       CEOX1           tc240c          2.000000  
+U73                       CEOX1           tc240c          2.000000  
+U74                       CEOX1           tc240c          2.000000  
+U75                       CEOX1           tc240c          2.000000  
+U76                       CEOX1           tc240c          2.000000  
+U77                       CEOX1           tc240c          2.000000  
+U78                       CEOX1           tc240c          2.000000  
+U79                       CEOX1           tc240c          2.000000  
+U80                       CEOX1           tc240c          2.000000  
+U81                       CEOX1           tc240c          2.000000  
+U82                       CEOX1           tc240c          2.000000  
+U83                       CEOX1           tc240c          2.000000  
+U84                       CEOX1           tc240c          2.000000  
+U85                       CEOX1           tc240c          2.000000  
+U86                       CEOX1           tc240c          2.000000  
+U87                       CEOX1           tc240c          2.000000  
+U88                       CEOX1           tc240c          2.000000  
+U89                       CEOX1           tc240c          2.000000  
+U90                       CEOX1           tc240c          2.000000  
+U91                       CEOX1           tc240c          2.000000  
+U92                       CEOX1           tc240c          2.000000  
+U93                       CEOX1           tc240c          2.000000  
+U94                       CEOX1           tc240c          2.000000  
+U95                       CEOX1           tc240c          2.000000  
+U96                       CEOX1           tc240c          2.000000  
+U97                       CEOX1           tc240c          2.000000  
+U98                       CEOX1           tc240c          2.000000  
+U99                       CEOX1           tc240c          2.000000  
+U100                      CEOX1           tc240c          2.000000  
+U101                      CEOX1           tc240c          2.000000  
+U102                      CEOX1           tc240c          2.000000  
+U103                      CEOX1           tc240c          2.000000  
+U104                      CEOX1           tc240c          2.000000  
+U105                      CEOX1           tc240c          2.000000  
+U106                      CEOX1           tc240c          2.000000  
+U107                      CEOX1           tc240c          2.000000  
+U108                      CEOX1           tc240c          2.000000  
+U109                      CEOX1           tc240c          2.000000  
+U110                      CEOX1           tc240c          2.000000  
+U111                      CEOX1           tc240c          2.000000  
+U112                      CEOX1           tc240c          2.000000  
+U113                      CEOX1           tc240c          2.000000  
+U114                      CEOX1           tc240c          2.000000  
+U115                      CEOX1           tc240c          2.000000  
+U116                      CEOX1           tc240c          2.000000  
+U117                      CEOX1           tc240c          2.000000  
+U118                      CEOX1           tc240c          2.000000  
+U119                      CEOX1           tc240c          2.000000  
+U120                      CEOX1           tc240c          2.000000  
+U121                      CEOX1           tc240c          2.000000  
+U122                      CEOX1           tc240c          2.000000  
+U123                      CEOX1           tc240c          2.000000  
+U124                      CEOX1           tc240c          2.000000  
+U125                      CEOX1           tc240c          2.000000  
+U126                      CEOX1           tc240c          2.000000  
+U127                      CEOX1           tc240c          2.000000  
+U128                      CEOX1           tc240c          2.000000  
+U129                      CEOX1           tc240c          2.000000  
+U130                      CEOX1           tc240c          2.000000  
+U131                      CEOX1           tc240c          2.000000  
+U132                      CIVX1           tc240c          1.000000  
+U133                      CDLY2X2         tc240c          7.000000  
+U134                      CDLY2X2         tc240c          7.000000  
+U135                      CDLY2X2         tc240c          7.000000  
+U136                      CDLY2X2         tc240c          7.000000  
+U137                      CDLY2X2         tc240c          7.000000  
+U138                      CDLY2X2         tc240c          7.000000  
+U139                      CDLY2X2         tc240c          7.000000  
+U140                      CDLY2X2         tc240c          7.000000  
+U141                      CDLY2X2         tc240c          7.000000  
+U142                      CDLY2X2         tc240c          7.000000  
+U143                      CDLY2X2         tc240c          7.000000  
+csa_1                     ripple_adder_cin_0              52.000000 h
+csa_2                     csa_8bit_0                      101.000000
+                                                                    h
+csa_3                     csa_8bit_6                      101.000000
+                                                                    h
+csa_4                     csa_8bit_5                      101.000000
+                                                                    h
+csa_5                     csa_8bit_4                      101.000000
+                                                                    h
+csa_6                     csa_8bit_3                      101.000000
+                                                                    h
+csa_7                     csa_8bit_2                      101.000000
+                                                                    h
+csa_8                     csa_8bit_1                      101.000000
+                                                                    h
+mux_csa_2                 mux_8                           23.500000 h
+mux_t1_csa_3_4            mux_16_tier1_0                  56.000000 h
+mux_t1_csa_5_6            mux_16_tier1_2                  56.000000 h
+mux_t1_csa_7_8            mux_16_tier1_1                  56.000000 h
+mux_t2_csa_3_4            mux_16_tier2                    43.500000 h
+mux_t2_csa_5_8            mux_32_tier2                    104.000000
+                                                                    h
+mux_t3_csa_5_8            mux_32_tier3                    83.500000 h
+op1_reg[0]                CLDP2QX1        tc240c          4.000000  n
+op1_reg[1]                CLDP2QX1        tc240c          4.000000  n
+op1_reg[2]                CLDP2QX1        tc240c          4.000000  n
+op1_reg[3]                CLDP2QX1        tc240c          4.000000  n
+op1_reg[4]                CLDP2QX1        tc240c          4.000000  n
+op1_reg[5]                CLDP2QX1        tc240c          4.000000  n
+op1_reg[6]                CLDP2QX1        tc240c          4.000000  n
+op1_reg[7]                CLDP2QX1        tc240c          4.000000  n
+op1_reg[8]                CLDP2QX1        tc240c          4.000000  n
+op1_reg[9]                CLDP2QX1        tc240c          4.000000  n
+op1_reg[10]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[11]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[12]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[13]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[14]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[15]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[16]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[17]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[18]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[19]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[20]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[21]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[22]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[23]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[24]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[25]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[26]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[27]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[28]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[29]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[30]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[31]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[32]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[33]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[34]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[35]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[36]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[37]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[38]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[39]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[40]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[41]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[42]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[43]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[44]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[45]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[46]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[47]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[48]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[49]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[50]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[51]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[52]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[53]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[54]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[55]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[56]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[57]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[58]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[59]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[60]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[61]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[62]               CLDP2QX1        tc240c          4.000000  n
+op1_reg[63]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[0]                CLDP2QX1        tc240c          4.000000  n
+op2_reg[1]                CLDP2QX1        tc240c          4.000000  n
+op2_reg[2]                CLDP2QX1        tc240c          4.000000  n
+op2_reg[3]                CLDP2QX1        tc240c          4.000000  n
+op2_reg[4]                CLDP2QX1        tc240c          4.000000  n
+op2_reg[5]                CLDP2QX1        tc240c          4.000000  n
+op2_reg[6]                CLDP2QX1        tc240c          4.000000  n
+op2_reg[7]                CLDP2QX1        tc240c          4.000000  n
+op2_reg[8]                CLDP2QX1        tc240c          4.000000  n
+op2_reg[9]                CLDP2QX1        tc240c          4.000000  n
+op2_reg[10]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[11]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[12]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[13]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[14]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[15]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[16]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[17]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[18]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[19]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[20]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[21]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[22]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[23]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[24]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[25]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[26]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[27]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[28]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[29]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[30]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[31]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[32]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[33]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[34]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[35]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[36]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[37]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[38]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[39]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[40]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[41]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[42]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[43]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[44]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[45]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[46]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[47]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[48]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[49]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[50]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[51]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[52]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[53]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[54]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[55]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[56]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[57]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[58]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[59]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[60]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[61]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[62]               CLDP2QX1        tc240c          4.000000  n
+op2_reg[63]               CLDP2QX1        tc240c          4.000000  n
+--------------------------------------------------------------------------------
+Total 347 cells                                           2027.500000
+1
+update_timing
+Information: Updating design information... (UID-85)
+Information: Input delay ('fall') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+1
+report_timing -max_path 5
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 5
+Design : csa_64bit
+Version: K-2015.06-SP5-1
+Date   : Wed Oct 31 15:05:55 2018
+****************************************
+
+Operating Conditions: WCCOM25   Library: tc240c
+Wire Load Model Mode: top
+
+  Startpoint: op1_reg[0] (positive level-sensitive latch)
+  Endpoint: overflow (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  op1_reg[0]/G (CLDP2QX1)                                 0.00       0.00 r
+  op1_reg[0]/Q (CLDP2QX1)                                 0.37       0.37 f
+  csa_1/a[0] (ripple_adder_cin_0)                         0.00       0.37 f
+  csa_1/b1/a (full_adder_0)                               0.00       0.37 f
+  csa_1/b1/U3/Z (CEOX1)                                   0.33       0.70 f
+  csa_1/b1/U2/Z (CAOR2X1)                                 0.32       1.02 f
+  csa_1/b1/cout_fa (full_adder_0)                         0.00       1.02 f
+  csa_1/b2/cin (full_adder_112)                           0.00       1.02 f
+  csa_1/b2/U2/Z (CAOR2X1)                                 0.35       1.37 f
+  csa_1/b2/cout_fa (full_adder_112)                       0.00       1.37 f
+  csa_1/b3/cin (full_adder_111)                           0.00       1.37 f
+  csa_1/b3/U2/Z (CAOR2X1)                                 0.35       1.73 f
+  csa_1/b3/cout_fa (full_adder_111)                       0.00       1.73 f
+  csa_1/b4/cin (full_adder_110)                           0.00       1.73 f
+  csa_1/b4/U2/Z (CAOR2X1)                                 0.35       2.08 f
+  csa_1/b4/cout_fa (full_adder_110)                       0.00       2.08 f
+  csa_1/b5/cin (full_adder_109)                           0.00       2.08 f
+  csa_1/b5/U2/Z (CAOR2X1)                                 0.35       2.43 f
+  csa_1/b5/cout_fa (full_adder_109)                       0.00       2.43 f
+  csa_1/b6/cin (full_adder_108)                           0.00       2.43 f
+  csa_1/b6/U2/Z (CAOR2X1)                                 0.35       2.78 f
+  csa_1/b6/cout_fa (full_adder_108)                       0.00       2.78 f
+  csa_1/b7/cin (full_adder_107)                           0.00       2.78 f
+  csa_1/b7/U2/Z (CAOR2X1)                                 0.35       3.13 f
+  csa_1/b7/cout_fa (full_adder_107)                       0.00       3.13 f
+  csa_1/b8/cin (full_adder_106)                           0.00       3.13 f
+  csa_1/b8/U2/Z (CAOR2X1)                                 0.47       3.60 f
+  csa_1/b8/cout_fa (full_adder_106)                       0.00       3.60 f
+  csa_1/cout_rca_c (ripple_adder_cin_0)                   0.00       3.60 f
+  mux_csa_2/sel (mux_8)                                   0.00       3.60 f
+  mux_csa_2/U9/Z (CAOR2X1)                                0.60       4.20 f
+  mux_csa_2/cout_8 (mux_8)                                0.00       4.20 f
+  mux_t2_csa_3_4/cin (mux_16_tier2)                       0.00       4.20 f
+  mux_t2_csa_3_4/U18/Z (CIVX1)                            0.33       4.53 r
+  mux_t2_csa_3_4/U17/Z (CAOR2X1)                          0.82       5.35 r
+  mux_t2_csa_3_4/e_c (mux_16_tier2)                       0.00       5.35 r
+  mux_t3_csa_5_8/cin (mux_32_tier3)                       0.00       5.35 r
+  mux_t3_csa_5_8/U34/Z (CIVX1)                            0.74       6.09 f
+  mux_t3_csa_5_8/U8/Z (CAOR2X1)                           0.36       6.45 f
+  mux_t3_csa_5_8/e_s[31] (mux_32_tier3)                   0.00       6.45 f
+  overflow (out)                                          0.00       6.45 f
+  data arrival time                                                  6.45
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: op1_reg[0] (positive level-sensitive latch)
+  Endpoint: sum_csa_64[63]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  op1_reg[0]/G (CLDP2QX1)                                 0.00       0.00 r
+  op1_reg[0]/Q (CLDP2QX1)                                 0.37       0.37 f
+  csa_1/a[0] (ripple_adder_cin_0)                         0.00       0.37 f
+  csa_1/b1/a (full_adder_0)                               0.00       0.37 f
+  csa_1/b1/U3/Z (CEOX1)                                   0.33       0.70 f
+  csa_1/b1/U2/Z (CAOR2X1)                                 0.32       1.02 f
+  csa_1/b1/cout_fa (full_adder_0)                         0.00       1.02 f
+  csa_1/b2/cin (full_adder_112)                           0.00       1.02 f
+  csa_1/b2/U2/Z (CAOR2X1)                                 0.35       1.37 f
+  csa_1/b2/cout_fa (full_adder_112)                       0.00       1.37 f
+  csa_1/b3/cin (full_adder_111)                           0.00       1.37 f
+  csa_1/b3/U2/Z (CAOR2X1)                                 0.35       1.73 f
+  csa_1/b3/cout_fa (full_adder_111)                       0.00       1.73 f
+  csa_1/b4/cin (full_adder_110)                           0.00       1.73 f
+  csa_1/b4/U2/Z (CAOR2X1)                                 0.35       2.08 f
+  csa_1/b4/cout_fa (full_adder_110)                       0.00       2.08 f
+  csa_1/b5/cin (full_adder_109)                           0.00       2.08 f
+  csa_1/b5/U2/Z (CAOR2X1)                                 0.35       2.43 f
+  csa_1/b5/cout_fa (full_adder_109)                       0.00       2.43 f
+  csa_1/b6/cin (full_adder_108)                           0.00       2.43 f
+  csa_1/b6/U2/Z (CAOR2X1)                                 0.35       2.78 f
+  csa_1/b6/cout_fa (full_adder_108)                       0.00       2.78 f
+  csa_1/b7/cin (full_adder_107)                           0.00       2.78 f
+  csa_1/b7/U2/Z (CAOR2X1)                                 0.35       3.13 f
+  csa_1/b7/cout_fa (full_adder_107)                       0.00       3.13 f
+  csa_1/b8/cin (full_adder_106)                           0.00       3.13 f
+  csa_1/b8/U2/Z (CAOR2X1)                                 0.47       3.60 f
+  csa_1/b8/cout_fa (full_adder_106)                       0.00       3.60 f
+  csa_1/cout_rca_c (ripple_adder_cin_0)                   0.00       3.60 f
+  mux_csa_2/sel (mux_8)                                   0.00       3.60 f
+  mux_csa_2/U9/Z (CAOR2X1)                                0.60       4.20 f
+  mux_csa_2/cout_8 (mux_8)                                0.00       4.20 f
+  mux_t2_csa_3_4/cin (mux_16_tier2)                       0.00       4.20 f
+  mux_t2_csa_3_4/U18/Z (CIVX1)                            0.33       4.53 r
+  mux_t2_csa_3_4/U17/Z (CAOR2X1)                          0.82       5.35 r
+  mux_t2_csa_3_4/e_c (mux_16_tier2)                       0.00       5.35 r
+  mux_t3_csa_5_8/cin (mux_32_tier3)                       0.00       5.35 r
+  mux_t3_csa_5_8/U34/Z (CIVX1)                            0.74       6.09 f
+  mux_t3_csa_5_8/U8/Z (CAOR2X1)                           0.36       6.45 f
+  mux_t3_csa_5_8/e_s[31] (mux_32_tier3)                   0.00       6.45 f
+  sum_csa_64[63] (out)                                    0.00       6.45 f
+  data arrival time                                                  6.45
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: op1_reg[0] (positive level-sensitive latch)
+  Endpoint: sum_csa_64[62]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  op1_reg[0]/G (CLDP2QX1)                                 0.00       0.00 r
+  op1_reg[0]/Q (CLDP2QX1)                                 0.37       0.37 f
+  csa_1/a[0] (ripple_adder_cin_0)                         0.00       0.37 f
+  csa_1/b1/a (full_adder_0)                               0.00       0.37 f
+  csa_1/b1/U3/Z (CEOX1)                                   0.33       0.70 f
+  csa_1/b1/U2/Z (CAOR2X1)                                 0.32       1.02 f
+  csa_1/b1/cout_fa (full_adder_0)                         0.00       1.02 f
+  csa_1/b2/cin (full_adder_112)                           0.00       1.02 f
+  csa_1/b2/U2/Z (CAOR2X1)                                 0.35       1.37 f
+  csa_1/b2/cout_fa (full_adder_112)                       0.00       1.37 f
+  csa_1/b3/cin (full_adder_111)                           0.00       1.37 f
+  csa_1/b3/U2/Z (CAOR2X1)                                 0.35       1.73 f
+  csa_1/b3/cout_fa (full_adder_111)                       0.00       1.73 f
+  csa_1/b4/cin (full_adder_110)                           0.00       1.73 f
+  csa_1/b4/U2/Z (CAOR2X1)                                 0.35       2.08 f
+  csa_1/b4/cout_fa (full_adder_110)                       0.00       2.08 f
+  csa_1/b5/cin (full_adder_109)                           0.00       2.08 f
+  csa_1/b5/U2/Z (CAOR2X1)                                 0.35       2.43 f
+  csa_1/b5/cout_fa (full_adder_109)                       0.00       2.43 f
+  csa_1/b6/cin (full_adder_108)                           0.00       2.43 f
+  csa_1/b6/U2/Z (CAOR2X1)                                 0.35       2.78 f
+  csa_1/b6/cout_fa (full_adder_108)                       0.00       2.78 f
+  csa_1/b7/cin (full_adder_107)                           0.00       2.78 f
+  csa_1/b7/U2/Z (CAOR2X1)                                 0.35       3.13 f
+  csa_1/b7/cout_fa (full_adder_107)                       0.00       3.13 f
+  csa_1/b8/cin (full_adder_106)                           0.00       3.13 f
+  csa_1/b8/U2/Z (CAOR2X1)                                 0.47       3.60 f
+  csa_1/b8/cout_fa (full_adder_106)                       0.00       3.60 f
+  csa_1/cout_rca_c (ripple_adder_cin_0)                   0.00       3.60 f
+  mux_csa_2/sel (mux_8)                                   0.00       3.60 f
+  mux_csa_2/U9/Z (CAOR2X1)                                0.60       4.20 f
+  mux_csa_2/cout_8 (mux_8)                                0.00       4.20 f
+  mux_t2_csa_3_4/cin (mux_16_tier2)                       0.00       4.20 f
+  mux_t2_csa_3_4/U18/Z (CIVX1)                            0.33       4.53 r
+  mux_t2_csa_3_4/U17/Z (CAOR2X1)                          0.82       5.35 r
+  mux_t2_csa_3_4/e_c (mux_16_tier2)                       0.00       5.35 r
+  mux_t3_csa_5_8/cin (mux_32_tier3)                       0.00       5.35 r
+  mux_t3_csa_5_8/U34/Z (CIVX1)                            0.74       6.09 f
+  mux_t3_csa_5_8/U9/Z (CAOR2X1)                           0.36       6.45 f
+  mux_t3_csa_5_8/e_s[30] (mux_32_tier3)                   0.00       6.45 f
+  sum_csa_64[62] (out)                                    0.00       6.45 f
+  data arrival time                                                  6.45
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: op1_reg[0] (positive level-sensitive latch)
+  Endpoint: sum_csa_64[61]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  op1_reg[0]/G (CLDP2QX1)                                 0.00       0.00 r
+  op1_reg[0]/Q (CLDP2QX1)                                 0.37       0.37 f
+  csa_1/a[0] (ripple_adder_cin_0)                         0.00       0.37 f
+  csa_1/b1/a (full_adder_0)                               0.00       0.37 f
+  csa_1/b1/U3/Z (CEOX1)                                   0.33       0.70 f
+  csa_1/b1/U2/Z (CAOR2X1)                                 0.32       1.02 f
+  csa_1/b1/cout_fa (full_adder_0)                         0.00       1.02 f
+  csa_1/b2/cin (full_adder_112)                           0.00       1.02 f
+  csa_1/b2/U2/Z (CAOR2X1)                                 0.35       1.37 f
+  csa_1/b2/cout_fa (full_adder_112)                       0.00       1.37 f
+  csa_1/b3/cin (full_adder_111)                           0.00       1.37 f
+  csa_1/b3/U2/Z (CAOR2X1)                                 0.35       1.73 f
+  csa_1/b3/cout_fa (full_adder_111)                       0.00       1.73 f
+  csa_1/b4/cin (full_adder_110)                           0.00       1.73 f
+  csa_1/b4/U2/Z (CAOR2X1)                                 0.35       2.08 f
+  csa_1/b4/cout_fa (full_adder_110)                       0.00       2.08 f
+  csa_1/b5/cin (full_adder_109)                           0.00       2.08 f
+  csa_1/b5/U2/Z (CAOR2X1)                                 0.35       2.43 f
+  csa_1/b5/cout_fa (full_adder_109)                       0.00       2.43 f
+  csa_1/b6/cin (full_adder_108)                           0.00       2.43 f
+  csa_1/b6/U2/Z (CAOR2X1)                                 0.35       2.78 f
+  csa_1/b6/cout_fa (full_adder_108)                       0.00       2.78 f
+  csa_1/b7/cin (full_adder_107)                           0.00       2.78 f
+  csa_1/b7/U2/Z (CAOR2X1)                                 0.35       3.13 f
+  csa_1/b7/cout_fa (full_adder_107)                       0.00       3.13 f
+  csa_1/b8/cin (full_adder_106)                           0.00       3.13 f
+  csa_1/b8/U2/Z (CAOR2X1)                                 0.47       3.60 f
+  csa_1/b8/cout_fa (full_adder_106)                       0.00       3.60 f
+  csa_1/cout_rca_c (ripple_adder_cin_0)                   0.00       3.60 f
+  mux_csa_2/sel (mux_8)                                   0.00       3.60 f
+  mux_csa_2/U9/Z (CAOR2X1)                                0.60       4.20 f
+  mux_csa_2/cout_8 (mux_8)                                0.00       4.20 f
+  mux_t2_csa_3_4/cin (mux_16_tier2)                       0.00       4.20 f
+  mux_t2_csa_3_4/U18/Z (CIVX1)                            0.33       4.53 r
+  mux_t2_csa_3_4/U17/Z (CAOR2X1)                          0.82       5.35 r
+  mux_t2_csa_3_4/e_c (mux_16_tier2)                       0.00       5.35 r
+  mux_t3_csa_5_8/cin (mux_32_tier3)                       0.00       5.35 r
+  mux_t3_csa_5_8/U34/Z (CIVX1)                            0.74       6.09 f
+  mux_t3_csa_5_8/U11/Z (CAOR2X1)                          0.36       6.45 f
+  mux_t3_csa_5_8/e_s[29] (mux_32_tier3)                   0.00       6.45 f
+  sum_csa_64[61] (out)                                    0.00       6.45 f
+  data arrival time                                                  6.45
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: op1_reg[0] (positive level-sensitive latch)
+  Endpoint: sum_csa_64[60]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  op1_reg[0]/G (CLDP2QX1)                                 0.00       0.00 r
+  op1_reg[0]/Q (CLDP2QX1)                                 0.37       0.37 f
+  csa_1/a[0] (ripple_adder_cin_0)                         0.00       0.37 f
+  csa_1/b1/a (full_adder_0)                               0.00       0.37 f
+  csa_1/b1/U3/Z (CEOX1)                                   0.33       0.70 f
+  csa_1/b1/U2/Z (CAOR2X1)                                 0.32       1.02 f
+  csa_1/b1/cout_fa (full_adder_0)                         0.00       1.02 f
+  csa_1/b2/cin (full_adder_112)                           0.00       1.02 f
+  csa_1/b2/U2/Z (CAOR2X1)                                 0.35       1.37 f
+  csa_1/b2/cout_fa (full_adder_112)                       0.00       1.37 f
+  csa_1/b3/cin (full_adder_111)                           0.00       1.37 f
+  csa_1/b3/U2/Z (CAOR2X1)                                 0.35       1.73 f
+  csa_1/b3/cout_fa (full_adder_111)                       0.00       1.73 f
+  csa_1/b4/cin (full_adder_110)                           0.00       1.73 f
+  csa_1/b4/U2/Z (CAOR2X1)                                 0.35       2.08 f
+  csa_1/b4/cout_fa (full_adder_110)                       0.00       2.08 f
+  csa_1/b5/cin (full_adder_109)                           0.00       2.08 f
+  csa_1/b5/U2/Z (CAOR2X1)                                 0.35       2.43 f
+  csa_1/b5/cout_fa (full_adder_109)                       0.00       2.43 f
+  csa_1/b6/cin (full_adder_108)                           0.00       2.43 f
+  csa_1/b6/U2/Z (CAOR2X1)                                 0.35       2.78 f
+  csa_1/b6/cout_fa (full_adder_108)                       0.00       2.78 f
+  csa_1/b7/cin (full_adder_107)                           0.00       2.78 f
+  csa_1/b7/U2/Z (CAOR2X1)                                 0.35       3.13 f
+  csa_1/b7/cout_fa (full_adder_107)                       0.00       3.13 f
+  csa_1/b8/cin (full_adder_106)                           0.00       3.13 f
+  csa_1/b8/U2/Z (CAOR2X1)                                 0.47       3.60 f
+  csa_1/b8/cout_fa (full_adder_106)                       0.00       3.60 f
+  csa_1/cout_rca_c (ripple_adder_cin_0)                   0.00       3.60 f
+  mux_csa_2/sel (mux_8)                                   0.00       3.60 f
+  mux_csa_2/U9/Z (CAOR2X1)                                0.60       4.20 f
+  mux_csa_2/cout_8 (mux_8)                                0.00       4.20 f
+  mux_t2_csa_3_4/cin (mux_16_tier2)                       0.00       4.20 f
+  mux_t2_csa_3_4/U18/Z (CIVX1)                            0.33       4.53 r
+  mux_t2_csa_3_4/U17/Z (CAOR2X1)                          0.82       5.35 r
+  mux_t2_csa_3_4/e_c (mux_16_tier2)                       0.00       5.35 r
+  mux_t3_csa_5_8/cin (mux_32_tier3)                       0.00       5.35 r
+  mux_t3_csa_5_8/U34/Z (CIVX1)                            0.74       6.09 f
+  mux_t3_csa_5_8/U12/Z (CAOR2X1)                          0.36       6.45 f
+  mux_t3_csa_5_8/e_s[28] (mux_32_tier3)                   0.00       6.45 f
+  sum_csa_64[60] (out)                                    0.00       6.45 f
+  data arrival time                                                  6.45
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
+set_max_area 2000
+1
+report_area
+ 
+****************************************
+Report : area
+Design : csa_64bit
+Version: K-2015.06-SP5-1
+Date   : Wed Oct 31 15:05:55 2018
+****************************************
+
+Library(s) Used:
+
+    tc240c (File: /apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25)
+
+Number of ports:                         1936
+Number of nets:                          2808
+Number of cells:                         1088
+Number of combinational cells:            803
+Number of sequential cells:               136
+Number of macros/black boxes:               0
+Number of buf/inv:                        239
+Number of references:                      20
+
+Combinational area:               1515.500000
+Buf/Inv area:                      305.000000
+Noncombinational area:             512.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                  2027.500000
+Total area:                 undefined
+1
+set MAX_LEAKAGE_POWER 0.0
+0.0
+set_max_leakage_power $MAX_LEAKAGE_POWER
+Information: Command 'set_max_leakage_power' is obsolete and is being ignored. (INFO-102)
+0
+set MAX_DYNAMIC_POWER 0.0
+0.0
+set_max_dynamic_power $MAX_DYNAMIC_POWER
+Information: Command 'set_max_dynamic_power' is obsolete and is being ignored. (INFO-102)
+0
+report_power
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25'
+Warning: Main library 'tc240c' does not specify the following unit required for power: 'Leakage Power'. (PWR-424)
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : csa_64bit
+Version: K-2015.06-SP5-1
+Date   : Wed Oct 31 15:05:56 2018
+****************************************
+
+
+Library(s) Used:
+
+    tc240c (File: /apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25)
+
+
+Operating Conditions: WCCOM25   Library: tc240c
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 2.3  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = Unitless
+
+
+  Cell Internal Power  =   4.4650 mW   (74%)
+  Net Switching Power  =   1.5664 mW   (26%)
+                         ---------
+Total Dynamic Power    =   6.0314 mW  (100%)
+
+Cell Leakage Power     =   0.0000 
+
+Error: Either dynamic power or leakage power, in the library, is unitless. Unable to display complete power group summary. (PWR-799)
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000               NA   (     N/A)
+memory             0.0000            0.0000            0.0000               NA   (     N/A)
+black_box          0.0000            0.0000            0.0000               NA   (     N/A)
+clock_network      0.0000            0.0000            0.0000               NA   (     N/A)
+register           0.0000            0.0000            0.0000               NA   (     N/A)
+sequential     1.0266e+03          319.4420            0.0000               NA   (     N/A)
+combinational  3.4384e+03        1.2469e+03            0.0000               NA   (     N/A)
+--------------------------------------------------------------------------------------------------
+Total          4.4650e+03 uW     1.5664e+03 uW         0.0000               NA        
+1
+write -hierarchy -format verilog -output csa_64bit_netlist.v
+Writing verilog file '/home/012461540@SJSUAD.SJSU.EDU/Study/git/csa_64bit_netlist.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+report_qor
+ 
+****************************************
+Report : qor
+Design : csa_64bit
+Version: K-2015.06-SP5-1
+Date   : Wed Oct 31 15:05:56 2018
+****************************************
+
+
+  Timing Path Group (none)
+  -----------------------------------
+  Levels of Logic:              14.00
+  Critical Path Length:          6.45
+  Critical Path Slack:         uninit
+  Critical Path Clk Period:       n/a
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:        149
+  Hierarchical Port Count:       1738
+  Leaf Cell Count:                931
+  Buf/Inv Cell Count:             239
+  Buf Cell Count:                  11
+  Inv Cell Count:                 228
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:       803
+  Sequential Cell Count:          128
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:     1515.500000
+  Noncombinational Area:   512.000000
+  Buf/Inv Area:            305.000000
+  Total Buffer Area:            77.00
+  Total Inverter Area:         228.00
+  Macro/Black Box Area:      0.000000
+  Net Area:                  0.000000
+  -----------------------------------
+  Cell Area:              2027.500000
+  Design Area:            2027.500000
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:          1071
+  Nets With Violations:             0
+  Max Trans Violations:             0
+  Max Cap Violations:               0
+  -----------------------------------
+
+
+  Hostname: coe-ee-cad43.sjsuad.sjsu.edu
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                    0.09
+  Logic Optimization:                  0.26
+  Mapping Optimization:                0.14
+  -----------------------------------------
+  Overall Compile Time:                1.85
+  Overall Compile Wall Clock Time:     2.65
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+
+  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+  --------------------------------------------------------------------
+
+
+1
+quit
+
+Thank you...

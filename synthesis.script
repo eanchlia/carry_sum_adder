@@ -1,0 +1,41 @@
+set search_path {/export/apps/toshiba/sjsu/synopsys/tc240c/}
+
+set link_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25}
+
+set target_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25}
+
+set symbol_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.workview.sdb}
+
+set synthetic_library {dw_foundation.sldb standard.sldb}
+
+set_min_library /apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_WCCOM25 -min_version /apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_BCCOM25
+
+read_verilog ./csa_64bit.v
+
+analyze  -format verilog {./csa_64bit.v}
+
+elaborate  csa_64bit
+
+current_design csa_64bit
+check_design 
+create_clock clock -name clock -period 3.64
+set_clock_uncertainty 0.25 clock
+set_propagated_clock clock
+set_dont_touch_network [all_clocks]
+set_fix_hold clock
+compile -incremental_mapping
+report -cell
+update_timing
+report_timing -max_path 5
+set_max_area 2000
+report_area
+set MAX_LEAKAGE_POWER 0.0
+set_max_leakage_power $MAX_LEAKAGE_POWER
+set MAX_DYNAMIC_POWER 0.0
+set_max_dynamic_power $MAX_DYNAMIC_POWER
+report_power
+write -hierarchy -format verilog -output csa_64bit_netlist.v
+report_qor
+quit
+
+
