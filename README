@@ -1,9 +1,13 @@
-Design : 
-An optimized implemetation of 64-bit CSA 
+#carry_sum_adder
+#Design : 
+#An optimized implemetation of 64-bit CSA 
 
-To Simulate using IRUN:
+#To Simulate using IRUN:
 irun -sv csa_64bit.v test.sv -access +rw
-Result log: irun.log
+#Result log: irun.log
 
-To Synthesize: source sss
-Result file: synres.txt
+#To Synthesize: 
+source sss
+#Result file: synres.txt
+
+#Project report: CSA Report.docx
